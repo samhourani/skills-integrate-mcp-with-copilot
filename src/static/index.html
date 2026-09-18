@@ -7,10 +7,42 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+    <header class="app-header">
+      <div class="header-content">
+        <div>
+          <h1>Mergington High School</h1>
+          <h2>Extracurricular Activities</h2>
+        </div>
+        <div class="header-actions">
+          <div id="user-badge" class="user-badge hidden">
+            <span id="user-name">Guest</span>
+            <span id="role-badge" class="role-badge">Student</span>
+          </div>
+          <button id="login-button" type="button" class="secondary-btn">Log in</button>
+          <button id="logout-button" type="button" class="secondary-btn hidden">Log out</button>
+        </div>
+      </div>
     </header>
+
+    <div id="login-modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>School Access</h3>
+          <button id="close-login-modal" type="button" class="ghost-btn" aria-label="Close login">×</button>
+        </div>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email:</label>
+            <input id="login-email" type="email" placeholder="your-email@mergington.edu" required />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password:</label>
+            <input id="login-password" type="password" placeholder="Enter your password" required />
+          </div>
+          <button type="submit">Log in</button>
+        </form>
+      </div>
+    </div>
 
     <main>
       <section id="activities-container">
